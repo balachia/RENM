@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 
 //import y.base.Edge;
-import y.base.Graph;
+//import y.base.Graph;
 
 import org.ejml.data.DenseMatrix64F;
 import org.ejml.ops.CommonOps;
@@ -501,7 +501,7 @@ public class Transformation implements Serializable{
 	    try 
 	    { 
 	      ois.defaultReadObject(); 
-	      Graph m_graph2 = new Graph();
+	      //Graph m_graph2 = new Graph();
 	      m_graph = new EventNetwork(s_attributes, s_T_halfs);
 	      //TODO: This is incredibly hidden and obscure. Very bad. Need a better way to tell event network about actors, must make it more central.
 	      m_graph.addActors(m_uniqueActors);

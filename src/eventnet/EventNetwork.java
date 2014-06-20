@@ -7,11 +7,14 @@ import java.util.LinkedList;
 
 import eventnet.helper.Pair;
 import eventnet.statistics.Statistic;
-import y.base.Edge;
-import y.base.EdgeCursor;
-import y.base.Graph;
-import y.base.Node;
-import y.base.EdgeMap;
+import eventnet.graph.*;
+//import y.base.Edge;
+//import eventnet.graph.Edge;
+//import y.base.EdgeCursor;
+//import y.base.Graph;
+//import y.base.Node;
+//import eventnet.graph.Node;
+//import y.base.EdgeMap;
 import org.ejml.data.DenseMatrix64F;
 import org.ejml.ops.CommonOps;
 //import org.ejml.ops.MatrixVisualization;
@@ -391,7 +394,7 @@ public class EventNetwork {
 	 * @param dir one of the possible edge selectors
 	 * @return the inDegree, outDegree, symetricDegree of the node
 	 */
-	public int getDegree(Node n, Direction dir) {
+	/*public int getDegree(Node n, Direction dir) {
 		switch (dir) {
 			case IN: return n.inDegree();
 			case OUT: return n.outDegree();
@@ -399,14 +402,14 @@ public class EventNetwork {
 		}
 		//error default
 		return 0;
-	}
+	}*/
 	
 	/**
 	 * @param n an EXISTING node of the graph use getNode to get such a node
 	 * @param dir one of the possible edge selectors
 	 * @return cursor over all incoming, outgoing, all edges of a node
 	 */	
-	public EdgeCursor getEdges(Node n, Direction dir) {
+	/*public EdgeCursor getEdges(Node n, Direction dir) {
 		switch (dir) {
 			case IN: return n.inEdges();
 			case OUT: return n.outEdges();
@@ -414,7 +417,7 @@ public class EventNetwork {
 		}
 		//error
 		return null;
-	}
+	}*/
 	
 		
 	/**
@@ -422,7 +425,7 @@ public class EventNetwork {
 	 * 
 	 * @param src the source node in the graph
 	 * @param tar the target node in the graph
-	 * @param soruce the unique string identifier of the source node
+	 * @param source the unique string identifier of the source node
 	 * @param target the unique string identifier of the target node
 	 */
 	private Edge addEdge(Node src, Node tar, String source, String target) {
@@ -458,6 +461,7 @@ public class EventNetwork {
 	 * @return a edgemap to iterate over the newly created attribute
 	 */
 	private EdgeMap addEdgeAttribute(String attrName) {
+//	private void addEdgeAttribute(String attrName) {	    
 		EdgeMap edgeM = m_graph.createEdgeMap();
 		m_attrName2EdgeMap.put(attrName, edgeM);
 		
