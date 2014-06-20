@@ -1,0 +1,4 @@
+chat	chat	Identity
+chat	chatfast	Identity
+friend	friend	Threshold	3.5
+friend	unfriend	Invert	7

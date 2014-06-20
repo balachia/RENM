@@ -1,0 +1,1 @@
+chat	10chatfast	1friend	0unfriend	0
