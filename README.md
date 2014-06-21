@@ -14,12 +14,12 @@ The project is configured for Apache Ant. Build the project by entering the root
 
 The *test* folder contains a simple test case that should take no more than a few minutes to run.  Run the test case by entering 
 
-    java -cp classes:"extlib/*" eventnet.debug.startFromTable
-        --verbose 
-        --attributes "test/attrs.txt"
-        --statistics "test/stats.txt"
-        --types "test/types.txt"
-        --events "test/sample_data.txt"
+    java -cp classes:"extlib/*" eventnet.debug.startFromTable \
+        --verbose \
+        --attributes "test/attrs.txt" \
+        --statistics "test/stats.txt" \
+        --types "test/types.txt" \
+        --events "test/sample_data.txt" 
 
 After 12 or so iterations, the solver should converge at the following output:
 
