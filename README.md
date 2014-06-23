@@ -10,39 +10,45 @@ This code implements a maximum likelihood estimator of a RENM. Unfortunately, th
 
 The project is configured for Apache Ant. Build the project by entering the root folder in terminal and typing
 
-    ant all
+```sh
+ant all
+```
 
 The *test* folder contains a simple test case that should take no more than a few minutes to run.  Run the test case by entering 
 
-    java -cp classes:"extlib/*" eventnet.debug.startFromTable \
-        --verbose \
-        --attributes "test/attrs.txt" \
-        --statistics "test/stats.txt" \
-        --types "test/types.txt" \
-        --events "test/sample_data.txt" 
+```sh
+java -cp classes:"extlib/*" eventnet.debug.startFromTable \
+    --verbose \
+    --attributes "test/attrs.txt" \
+    --statistics "test/stats.txt" \
+    --types "test/types.txt" \
+    --events "test/sample_data.txt" 
+```
 
 After 12 or so iterations, the solver should converge at the following output:
 
-    ITERATION 12
-    Param   SE  Stat
-    -6.782192499979157  0.03480543913913448 ** Constant
-    0.01110773826798984 9.015498050049717E-4    ** RelCov (OUT chat)
-    0.0013576213737991824   8.885454473675229E-4    RelCov (IN chat)
-    9.96632548221402E-4 2.5946425919005754E-4   ** RelCov (IN chatfast)
-    0.02713187611063073 0.004577435777085113    ** RelProd (OUT chat, OUT friend)
-    -0.04808858308289873    0.004432269549438358    ** RelProd (IN chat, OUT friend)
-    0.0017362896790377904   8.378395655138633E-4    * RelProd (IN chatfast, OUT friend)
-    4.5411033647038506E-4   4.807046386921453E-5    ** Degree (SRC/SYM chat)
-    6.693584532912896E-5    6.939226116448735E-5    Degree (TAR/SYM chat)
-    0.004271084978883075    5.411610527223405E-4    ** Triangle (SYM chat, SYM chat)
-    0.020902723578907816    0.0045312733373824065   ** CondTri (SYM chat, SYM chat [OUT friend])
-    LL: -7876.057111339139
-    AIC:    15774.114222678278
-    AICc:   15774.342398996341
-    BIC:    15829.81716625447
+```sh
+ITERATION 12
+Param   SE  Stat
+-6.782192499979157  0.03480543913913448 ** Constant
+0.01110773826798984 9.015498050049717E-4    ** RelCov (OUT chat)
+0.0013576213737991824   8.885454473675229E-4    RelCov (IN chat)
+9.96632548221402E-4 2.5946425919005754E-4   ** RelCov (IN chatfast)
+0.02713187611063073 0.004577435777085113    ** RelProd (OUT chat, OUT friend)
+-0.04808858308289873    0.004432269549438358    ** RelProd (IN chat, OUT friend)
+0.0017362896790377904   8.378395655138633E-4    * RelProd (IN chatfast, OUT friend)
+4.5411033647038506E-4   4.807046386921453E-5    ** Degree (SRC/SYM chat)
+6.693584532912896E-5    6.939226116448735E-5    Degree (TAR/SYM chat)
+0.004271084978883075    5.411610527223405E-4    ** Triangle (SYM chat, SYM chat)
+0.020902723578907816    0.0045312733373824065   ** CondTri (SYM chat, SYM chat [OUT friend])
+LL: -7876.057111339139
+AIC:    15774.114222678278
+AICc:   15774.342398996341
+BIC:    15829.81716625447
 
-    |dX| (P2): 2.558009421365071E-13
-    |dLL|: 2.5283952709287405E-10
+|dX| (P2): 2.558009421365071E-13
+|dLL|: 2.5283952709287405E-10
+```
 
 The output lists the parameter value at the maximum likelihood estimate (MLE), the standard error associated with the parameter, and the parameter name. Summary statistics follow below that.
 |dX| and |dLL| are the changes in parameter values and log-likelihood from the previous iteration and are used for convergence detection.
@@ -100,7 +106,9 @@ For example, if time stamps are recorded in seconds, a minimum time difference o
 
 Both parameters are set in the source code, in *src/eventnet/debug/startFromTable.java*, on the line
 
-    Tranformation trans = new Tranformation(..., ..., ..., ..., MIN_DIFFERENCE, STARTING_TIME)
+```Java
+Tranformation trans = new Tranformation(..., ..., ..., ..., MIN_DIFFERENCE, STARTING_TIME)
+```
 
 
 ## Contact
