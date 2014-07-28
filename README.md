@@ -4,6 +4,7 @@ Relational Event Network Models (RENMs) attempt to model the rate of events that
 A typical example might be texts or chats sent from one person to another on a mobile or social network.
 
 This code implements a maximum likelihood estimator of a RENM. Unfortunately, the code is poorly documented at the moment.
+There is also an early stage [port of this project to R](https://github.com/balachia/renmr).
 
 
 ## Setup
